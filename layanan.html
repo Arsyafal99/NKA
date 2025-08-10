@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layanan - Naik Kelas Akademik</title>
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animasi Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <header class="fixed top-0 w-full z-50 bg-white shadow">
+      <div
+        class="container mx-auto flex items-center justify-between py-4 px-6"
+      >
+        <a href="index.html" class="flex items-center space-x-3">
+          <img
+            src="img/favicon.png"
+            alt="Logo Naik Kelas"
+            class="h-10 w-10 object-contain"
+          />
+          <span class="text-2xl font-bold text-blue-700"
+            >Naik Kelas Akademik</span
+          >
+        </a>
+
+        <!-- Hamburger Menu (Mobile) -->
+        <button
+          class="md:hidden focus:outline-none"
+          id="menu-toggle"
+          aria-label="Toggle Navigation"
+        >
+          <svg
+            class="w-6 h-6 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <!-- Menu -->
+        <nav
+          id="nav-menu"
+          class="hidden md:flex flex-col md:flex-row md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none px-6 py-4 md:py-0 transition-all duration-300"
+        >
+          <a
+            href="index.html"
+            class="block py-2 md:py-0 md:px-4 text-gray-700 hover:text-blue-500"
+            >Beranda</a
+          >
+          <a
+            href="tentang.html"
+            class="block py-2 md:py-0 md:px-4 text-gray-700 hover:text-blue-500"
+            >Tentang</a
+          >
+          <a
+            href="layanan.html"
+            class="block py-2 md:py-0 md:px-4 text-gray-700 hover:text-blue-500"
+            >Layanan</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section
+      class="text-center py-20 px-4 bg-gradient-to-b from-indigo-100 to-white"
+    >
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-up">
+        Layanan Kami
+      </h2>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto animate-fade-up delay-100">
+        Solusi tugas kamu? Selesaikan dengan
+        <span class="text-indigo-600 font-bold italic">Naik Kelas</span>. Cepat,
+        rapi, dan terpercaya!
+      </p>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="layanan" class="bg-indigo-50 py-20 px-6">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <!-- Perkuliahan -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition transform hover:scale-105"
+        >
+          <h4 class="text-xl font-semibold mb-3 text-indigo-600">
+            Tugas Perkuliahan
+          </h4>
+          <p class="text-gray-700 mb-4">
+            Kami menerima semua jenis tugas kuliah baik dari jurusan teknik,
+            sosial, kesehatan, ekonomi, dan lainnya.
+          </p>
+          <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li>✅ Makalah dan laporan</li>
+            <li>✅ PowerPoint presentasi</li>
+            <li>✅ Tugas coding (Python, Java, Web)</li>
+            <li>✅ Statistik, SPSS, Excel</li>
+            <li>✅ Tugas sistem informasi dan basis data</li>
+            <li>✅ Revisi sesuai dosen</li>
+            <li>✅ Untuk semua jurusan</li>
+          </ul>
+        </div>
+
+        <!-- Sekolah -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition transform hover:scale-105"
+        >
+          <h4 class="text-xl font-semibold mb-3 text-indigo-600">
+            Tugas Sekolah
+          </h4>
+          <p class="text-gray-700 mb-4">
+            Kami bantu tugas anak sekolah dari SD sampai SMA dengan hasil
+            terbaik dan ramah revisi.
+          </p>
+          <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li>📘 Tugas Matematika, IPA, IPS</li>
+            <li>📘 Membuat resume, esai, laporan</li>
+            <li>📘 PowerPoint presentasi siswa</li>
+            <li>📘 Tugas prakarya & desain</li>
+            <li>📘 Membuat soal dan kunci jawaban</li>
+            <li>📘 Latihan Ujian dan Penilaian</li>
+          </ul>
+        </div>
+
+        <!-- Custom -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition transform hover:scale-105"
+        >
+          <h4 class="text-xl font-semibold mb-3 text-indigo-600">
+            Pengetikan & Custom
+          </h4>
+          <p class="text-gray-700 mb-4">
+            Untuk kamu yang butuh cepat dan rapi, kami menyediakan layanan
+            pengetikan & kustomisasi.
+          </p>
+          <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li>⌨️ Pengetikan dokumen Word</li>
+            <li>📄 Membuat Curriculum Vitae (CV)</li>
+            <li>📊 Entry data Excel dan tabel</li>
+            <li>📎 Resume artikel/jurnal</li>
+            <li>🎨 Desain presentasi PowerPoint</li>
+            <li>📁 Kompilasi dokumen tugas akhir</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-indigo-50">
+      <div class="max-w-6xl mx-auto px-4 space-y-10">
+        <!-- SLIDE ATAS - BERGERAK KE KIRI -->
+        <div class="slide-container">
+          <div class="slide-track">
+            <!-- Duplikasi item untuk loop seamless -->
+            <div class="slide-item">✅ Layanan Tepat Waktu</div>
+            <div class="slide-item">📊 Presentasi PowerPoint</div>
+            <div class="slide-item">📝 Resume Otomatis</div>
+            <div class="slide-item">🎓 Tugas Sekolah</div>
+            <div class="slide-item">🎥 Edit Video</div>
+            <div class="slide-item">📖 Translate Jurnal</div>
+            <div class="slide-item">📚 Pembuatan Modul</div>
+            <div class="slide-item">🗂️ Pengerjaan Excel Otomatis</div>
+            <div class="slide-item">✅ Layanan Tepat Waktu</div>
+            <div class="slide-item">📊 Presentasi PowerPoint</div>
+            <div class="slide-item">📝 Resume Otomatis</div>
+            <div class="slide-item">🎓 Tugas Sekolah</div>
+            <div class="slide-item">🎥 Edit Video</div>
+            <div class="slide-item">📖 Translate Jurnal</div>
+            <div class="slide-item">📚 Pembuatan Modul</div>
+            <div class="slide-item">🗂️ Pengerjaan Excel Otomatis</div>
+          </div>
+        </div>
+
+        <!-- SLIDE BAWAH - BERGERAK KE KANAN -->
+        <div class="slide-container reverse">
+          <div class="slide-track">
+            <!-- Duplikasi item untuk loop seamless -->
+            <div class="slide-item">🌐 Desain Web Frontend</div>
+            <div class="slide-item">🧾 CV & Surat Lamaran</div>
+            <div class="slide-item">📱 Desain Canva</div>
+            <div class="slide-item">📂 Entry Data Excel</div>
+            <div class="slide-item">💼 Portofolio Digital</div>
+            <div class="slide-item">🧠 Latihan Coding</div>
+            <div class="slide-item">📌 Infografis dan Konten</div>
+            <div class="slide-item">🎨 Desain Brosur & Poster</div>
+            <div class="slide-item">🌐 Desain Web Frontend</div>
+            <div class="slide-item">🧾 CV & Surat Lamaran</div>
+            <div class="slide-item">📱 Desain Canva</div>
+            <div class="slide-item">📂 Entry Data Excel</div>
+            <div class="slide-item">💼 Portofolio Digital</div>
+            <div class="slide-item">🧠 Latihan Coding</div>
+            <div class="slide-item">📌 Infografis dan Konten</div>
+            <div class="slide-item">🎨 Desain Brosur & Poster</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-20 bg-indigo-600 text-white text-center">
+      <div class="max-w-xl mx-auto" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold mb-4">
+          Kami tak sekadar bantu tugas — tapi bantu kamu
+          <span class="italic font-bold">Naik Kelas</span>.
+        </h3>
+        <a
+          href="form.html"
+          class="mt-6 inline-block px-8 py-3 rounded-full bg-white text-indigo-700 font-semibold shadow-lg hover:scale-105 transition"
+        >
+          Siap Naik Kelas? 🚀
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-indigo-800 text-white text-center py-6">
+      <p>© 2025 Naik Kelas Akademik. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/628161999005"
+      target="_blank"
+      class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center space-x-2 z-50 animate-bounce"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M21 15a2 2 0 01-2 2h-3l-4 4v-4H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2z"
+        />
+      </svg>
+      <span class="font-semibold">Konsultasi Gratis</span>
+    </a>
+
+    <!-- SCRIPT AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

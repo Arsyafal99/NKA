@@ -1,0 +1,480 @@
+/* Animasi fade-in */
+.animate-fade-in {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Delay class */
+.animate-fade-in.delay-200 {
+  animation-delay: 0.2s;
+}
+.animate-fade-in.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Keyframe untuk fadeIn */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes waveText {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 2px #0ea5e9;
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px #0ea5e9;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 2px #0ea5e9;
+  }
+}
+
+.hero-title {
+  animation: waveText 3s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+/* Animasi jatuh emoji */
+.emoji {
+  position: absolute;
+  font-size: 2rem;
+  animation: fall linear infinite;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Tambahkan animasi jika ingin */
+#nav-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animasi hujan emoji */
+.emoji {
+  position: fixed;
+  top: -2em;
+  font-size: 2rem;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  z-index: 999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Hover efek membesar */
+.hover-grow {
+  transition: transform 0.3s ease;
+}
+.hover-grow:hover {
+  transform: scale(1.05);
+}
+
+/* Tombol berdenyut */
+.animate-pulse-strong {
+  animation: pulseStrong 1.2s infinite;
+}
+
+@keyframes pulseStrong {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+.stat-count {
+  transition: all 1s ease-in-out;
+}
+
+/* ================================
+   ANIMASI MASUK / FADE IN DARI BAWAH
+   ================================ */
+.animate-fade-in {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: opacity, transform;
+}
+.animate-fade-in.delay-200 {
+  animation-delay: 0.2s;
+}
+.animate-fade-in.delay-300 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   ANIMASI TEKS BERGELOMBANG / WAVE TEXT
+   ================================ */
+@keyframes waveText {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 2px #0ea5e9;
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px #0ea5e9;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 2px #0ea5e9;
+  }
+}
+.hero-title {
+  animation: waveText 3s ease-in-out infinite;
+}
+
+/* ================================
+   ANIMASI FADE UP - TEKS NAIK DENGAN OPACITY
+   ================================ */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+/* ================================
+   HUJAN EMOJI / EMOJI JATUH DARI ATAS KE BAWAH
+   ================================ */
+.emoji {
+  position: fixed;
+  top: -2em;
+  font-size: 2rem;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  z-index: 999;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ================================
+   NAVIGATION MENU TRANSISI (SMOOTH TOGGLE)
+   ================================ */
+#nav-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ================================
+   HOVER GROW - EFEK MEMBESAR SAAT DIHOVER
+   ================================ */
+.hover-grow {
+  transition: transform 0.3s ease;
+}
+.hover-grow:hover {
+  transform: scale(1.05);
+}
+
+/* ================================
+   ANIMASI BERDENYUT (UNTUK TOMBOL CTA)
+   ================================ */
+.animate-pulse-strong {
+  animation: pulseStrong 1.2s infinite;
+}
+
+@keyframes pulseStrong {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* ================================
+   TRANSISI UNTUK STATISTIK / ANGKA COUNT UP
+   ================================ */
+.stat-count {
+  transition: all 1s ease-in-out;
+}
+
+/* ================================
+   ANIMASI SLIDE KIRI-KANAN (BERLAWANAN)
+   ================================ */
+.slide-container {
+  display: flex;
+  width: max-content;
+  animation: slideRight 20s linear infinite;
+}
+
+.slide-container.reverse {
+  animation: slideLeft 20s linear infinite;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slide-track {
+  display: flex;
+  gap: 1rem;
+}
+
+.slide-item {
+  min-width: 200px;
+  background: #eef2ff;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #4338ca;
+}
+
+/* ================================
+   ANIMASI MASUK / FADE IN DARI BAWAH
+   ================================ */
+.animate-fade-in {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: opacity, transform;
+}
+.animate-fade-in.delay-200 {
+  animation-delay: 0.2s;
+}
+.animate-fade-in.delay-300 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   ANIMASI TEKS BERGELOMBANG / WAVE TEXT
+   ================================ */
+@keyframes waveText {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 2px #0ea5e9;
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px #0ea5e9;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 2px #0ea5e9;
+  }
+}
+.hero-title {
+  animation: waveText 3s ease-in-out infinite;
+}
+
+/* ================================
+   ANIMASI FADE UP - TEKS NAIK DENGAN OPACITY
+   ================================ */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+/* ================================
+   HUJAN EMOJI / EMOJI JATUH DARI ATAS KE BAWAH
+   ================================ */
+.emoji {
+  position: fixed;
+  top: -2em;
+  font-size: 2rem;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  z-index: 999;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ================================
+   NAVIGATION MENU TRANSISI (SMOOTH TOGGLE)
+   ================================ */
+#nav-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ================================
+   HOVER GROW - EFEK MEMBESAR SAAT DIHOVER
+   ================================ */
+.hover-grow {
+  transition: transform 0.3s ease;
+}
+.hover-grow:hover {
+  transform: scale(1.05);
+}
+
+/* ================================
+   ANIMASI BERDENYUT (UNTUK TOMBOL CTA)
+   ================================ */
+.animate-pulse-strong {
+  animation: pulseStrong 1.2s infinite;
+}
+
+@keyframes pulseStrong {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* ================================
+   TRANSISI UNTUK STATISTIK / ANGKA COUNT UP
+   ================================ */
+.stat-count {
+  transition: all 1s ease-in-out;
+}
+
+/* ================================
+     SLIDE CONTAINER DAN TRACK
+     ================================ */
+
+/* Container utama untuk slide */
+.slide-container {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track yang berjalan berisi item slide */
+.slide-track {
+  display: flex;
+  width: max-content;
+  animation: slideLeft 30s linear infinite;
+}
+
+/* Jika ingin arah ke kiri, gunakan class .reverse pada slide-container */
+.slide-container.reverse .slide-track {
+  animation: slideRight 30s linear infinite;
+}
+
+/* Item kotak dalam slide */
+.slide-item {
+  min-width: 200px;
+  background: #eef2ff;
+  padding: 1rem 2rem;
+  margin: 0 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #4338ca;
+  flex-shrink: 0;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-0%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

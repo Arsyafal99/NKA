@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Form Pemesanan - Naik Kelas Akademik</title>
+    <meta
+      name="description"
+      content="Isi form pemesanan untuk meminta layanan Naik Kelas Akademik. Sertakan detail & deadline."
+    />
+    <link rel="canonical" href="https://your-site.example/form.html" />
+    <link rel="icon" href="img/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header class="fixed top-0 w-full z-50 bg-white shadow">
+      <div
+        class="container mx-auto flex items-center justify-between py-4 px-6"
+      >
+        <a href="index.html" class="flex items-center space-x-3">
+          <img
+            src="img/favicon.png"
+            alt="Logo"
+            class="h-10 w-10 object-contain"
+          />
+          <span class="text-2xl font-bold text-blue-700"
+            >Naik Kelas Akademik</span
+          >
+        </a>
+        <nav class="hidden md:flex md:items-center md:space-x-4 text-gray-700">
+          <a href="index.html" class="py-2 md:px-4 hover:text-blue-500"
+            >Beranda</a
+          >
+          <a href="tentang.html" class="py-2 md:px-4 hover:text-blue-500"
+            >Tentang</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-32 pb-12">
+      <section
+        class="pt-32 pb-12 bg-gradient-to-r from-indigo-100 to-blue-200 text-center"
+      >
+        <h1 class="text-4xl font-bold text-gray-800 mb-3">
+          Form Pemesanan Tugas
+        </h1>
+        <p class="text-lg text-gray-700">
+          Isi form ini agar kami bisa membantu menyelesaikan tugas kamu secara
+          profesional!
+        </p>
+      </section>
+
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-3xl">
+          <form
+            action="https://formsubmit.co/arsyafal99@gmail.com"
+            method="POST"
+            class="bg-white shadow-lg rounded-xl p-8 space-y-6"
+          >
+            <div>
+              <label
+                for="nama"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Nama Lengkap</label
+              >
+              <div class="relative">
+                <span class="absolute left-3 top-3 text-gray-400">👤</span>
+                <input
+                  type="text"
+                  name="nama"
+                  id="nama"
+                  required
+                  placeholder="Nama Lengkap"
+                  class="pl-10 w-full border border-gray-300 rounded-md p-3 focus:ring focus:ring-blue-200"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Email</label
+              >
+              <div class="relative">
+                <span class="absolute left-3 top-3 text-gray-400">📧</span>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  placeholder="Alamat Email Aktif"
+                  class="pl-10 w-full border border-gray-300 rounded-md p-3 focus:ring focus:ring-blue-200"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="nomor"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Nomor WhatsApp</label
+              >
+              <div class="relative">
+                <span class="absolute left-3 top-3 text-gray-400">📱</span>
+                <input
+                  type="text"
+                  name="nomor"
+                  id="nomor"
+                  required
+                  placeholder="08xxxxxxxxxx"
+                  class="pl-10 w-full border border-gray-300 rounded-md p-3 focus:ring focus:ring-blue-200"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="kategori"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Kategori Tugas</label
+              >
+              <select
+                name="kategori"
+                id="kategori"
+                required
+                class="block w-full border border-gray-300 rounded-md p-3 focus:ring focus:ring-blue-200"
+              >
+                <option value="">-- Pilih Kategori --</option>
+                <option value="Perkuliahan">Perkuliahan</option>
+                <option value="Sekolahan">Sekolahan</option>
+                <option value="Custom">Custom / Bebas</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                for="deskripsi"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Deskripsi Tugas</label
+              >
+              <div class="relative">
+                <span class="absolute left-3 top-3 text-gray-400">📝</span>
+                <textarea
+                  name="deskripsi"
+                  id="deskripsi"
+                  rows="5"
+                  required
+                  placeholder="Tuliskan detail tugas kamu..."
+                  class="pl-10 w-full border border-gray-300 rounded-md p-3 focus:ring focus:ring-blue-200"
+                ></textarea>
+              </div>
+            </div>
+
+            <input type="hidden" name="_captcha" value="false" />
+            <!-- redirect to a thank you page or keep blank; you said you'll delete thankyou later -->
+            <input type="hidden" name="_next" value="thankyou.html" />
+
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 rounded-md hover:from-blue-700 hover:to-indigo-700 transition shadow-lg text-lg flex items-center justify-center gap-2"
+            >
+              🚀 Kirim & Tunggu Balasan WA
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="bg-white py-6 mt-16 shadow-inner">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-600">
+          © 2025 Naik Kelas Akademik. Naik Kualitas, Naik Kelas.
+        </div>
+      </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
