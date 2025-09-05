@@ -2,348 +2,226 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Naik Kelas Akademik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naik Kelas Akademik | Solusi Tugas Mahasiswa & Pelajar</title>
 
-    <!-- Tailwind CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="LOGO/Tab.png" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Naik Kelas Akademik membantu mahasiswa dan pelajar menyelesaikan tugas, skripsi, dan laporan dengan profesional, terpercaya, dan tepat waktu."
     />
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
+
+    <meta property="og:title" content="Naik Kelas Akademik" />
+    <meta
+      property="og:description"
+      content="Solusi akademik profesional untuk mahasiswa & pelajar."
     />
-    <!-- AOS Animasi Scroll -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!-- Custom CSS -->
+    <meta property="og:image" content="img/hero.jpg" />
+    <meta property="og:url" content="https://arsyafal99.github.io/NKA" />
+    <meta property="og:type" content="website" />
+
+    <!-- CSS utama -->
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Boxicons untuk icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation (biar ada animasi scroll halus) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body class="bg-gray-50 text-gray-800">
-    <!-- Navbar -->
-    <header class="fixed top-0 w-full z-50 bg-white shadow">
-      <div
-        class="container mx-auto flex items-center justify-between py-4 px-6"
-      >
-        <a href="index.html" class="flex items-center space-x-3">
-          <img
-            src="img/favicon.png"
-            alt="Logo Naik Kelas"
-            class="h-10 w-10 object-contain"
-          />
-          <span class="text-2xl font-bold text-blue-700"
-            >Naik Kelas Akademik</span
-          >
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="index.html" class="brand">
+          <img src="LOGO/Logos.png" alt="Logo" class="brand-logo" />
+          <span class="brand-text">Naik Kelas Akademik</span>
         </a>
 
-        <!-- Hamburger Menu (Mobile) -->
-        <button
-          class="md:hidden focus:outline-none"
-          id="menu-toggle"
-          aria-label="Toggle Navigation"
-        >
-          <svg
-            class="w-6 h-6 text-gray-700"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+        <!-- Hamburger untuk mobile -->
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
         </button>
 
-        <!-- Menu -->
-        <nav
-          id="nav-menu"
-          class="hidden md:flex flex-col md:flex-row md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none px-6 py-4 md:py-0 transition-all duration-300"
-        >
-          <a
-            href="index.html"
-            class="block py-2 md:py-0 md:px-4 text-gray-700 hover:text-blue-500"
-            >Beranda</a
-          >
-          <a
-            href="tentang.html"
-            class="block py-2 md:py-0 md:px-4 text-gray-700 hover:text-blue-500"
-            >Tentang</a
-          >
-          <a
-            href="layanan.html"
-            class="block py-2 md:py-0 md:px-4 text-gray-700 hover:text-blue-500"
-            >Layanan</a
-          >
-        </nav>
+        <!-- Menu navigasi -->
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html" class="nav-link active">Beranda</a>
+          <a href="tentang.html" class="nav-link">Tentang</a>
+          <a href="layanan.html" class="nav-link">Layanan</a>
+          <a href="seo.html" class="nav-link">Artikel</a>
+          <a href="form.html" class="nav-cta">Pesan Sekarang</a>
+        </div>
       </div>
-    </header>
+    </nav>
 
-    <!-- HERO -->
-    <section
-      class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-indigo-200 to-sky-100 px-4 text-center"
-    >
-      <h1 class="text-5xl font-bold text-sky-600 mb-4" data-aos="fade-down">
-        Solusi Tugasmu dalam Sekejap
-      </h1>
-      <p class="text-lg text-gray-700 max-w-xl mb-6" data-aos="fade-up">
-        Dari tugas kuliah, sekolah, hingga dokumen penting — semua bisa beres
-        dengan cepat & rapi.
-      </p>
-      <a
-        href="#layanan"
-        class="px-8 py-3 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg transition transform hover:scale-105"
-        data-aos="zoom-in"
-        >Lihat Layanan</a
-      >
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+      <div class="container hero-inner" data-aos="fade-up">
+        <h1 class="hero-title">
+          Solusi Akademik <span class="highlight">Profesional</span> untuk
+          Mahasiswa & Pelajar
+        </h1>
+        <p class="hero-lead">
+          Konsultasi gratis & layanan terpercaya untuk tugas, laporan, skripsi,
+          dan kebutuhan akademik lainnya.
+        </p>
+        <!-- Tombol CTA -->
+        <div class="hero-buttons">
+          <a href="layanan.html" class="btn-primary">Lihat Layanan</a>
+          <a href="form.html" class="btn-secondary">Pesan Sekarang</a>
+        </div>
+        <!-- Ilustrasi hero (bisa diganti gambar apapun) -->
+        <div class="hero-img" data-aos="zoom-in">
+          <img src="img/Ilustrasi.png" alt="Belajar" />
+        </div>
+      </div>
     </section>
 
-    <!-- MENGAPA KAMI -->
-    <section class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto text-center px-4">
-        <h2 class="text-3xl font-bold text-indigo-700 mb-12" data-aos="fade-up">
-          Kenapa Memilih Kami?
-        </h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div
-            class="bg-gradient-to-br from-indigo-100 to-white rounded-2xl shadow-lg p-6"
-            data-aos="fade-right"
-          >
-            <h3 class="text-xl font-semibold text-indigo-600 mb-2">
-              Profesional & Berpengalaman
-            </h3>
-            <p class="text-gray-700">
-              Tim ahli dengan pengalaman luas membantu berbagai bidang akademik.
+    <!-- ================= WHY US ================= -->
+    <section class="why">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Mengapa Memilih Kami?</h2>
+        <div class="cards">
+          <div class="card" data-aos="fade-right">
+            <i class="bx bx-check-shield"></i>
+            <h3>Profesional</h3>
+            <p>Dikerjakan oleh tim berpengalaman sesuai bidangnya.</p>
+          </div>
+          <div class="card" data-aos="fade-up">
+            <i class="bx bx-time-five"></i>
+            <h3>Tepat Waktu</h3>
+            <p>Deadline ketat? Tenang, semua selesai sesuai jadwal.</p>
+          </div>
+          <div class="card" data-aos="fade-left">
+            <i class="bx bx-like"></i>
+            <h3>Terpercaya</h3>
+            <p>Pembayaran aman dengan sistem rekber sederhana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATISTIK ================= -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat" data-aos="zoom-in">
+            <div class="stat-number" data-target="500"></div>
+            <div class="stat-label">Mahasiswa Terbantu</div>
+          </div>
+          <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-number" data-target="98"></div>
+            <div class="stat-label">Kepuasan Klien</div>
+          </div>
+          <div class="stat" data-aos="zoom-in" data-aos-delay="400">
+            <div class="stat-number" data-target="200"></div>
+            <div class="stat-label">Skripsi & Laporan</div>
+          </div>
+          <div class="stat" data-aos="zoom-in" data-aos-delay="600">
+            <div class="stat-number" data-target="24"></div>
+            <div class="stat-label">Konsultasi Online</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LAYANAN ================= -->
+    <section class="services">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Layanan Kami</h2>
+        <div class="service-grid">
+          <div class="service" data-aos="flip-left">
+            <i class="bx bx-book"></i>
+            <h3>Tugas Harian</h3>
+          </div>
+          <div class="service" data-aos="flip-left" data-aos-delay="200">
+            <i class="bx bx-file"></i>
+            <h3>Makalah & Laporan</h3>
+          </div>
+          <div class="service" data-aos="flip-left" data-aos-delay="400">
+            <i class="bx bx-library"></i>
+            <h3>Skripsi & Thesis</h3>
+          </div>
+          <div class="service" data-aos="flip-left" data-aos-delay="600">
+            <i class="bx bx-slideshow"></i>
+            <h3>Presentasi & PowerPoint</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIAL ================= -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Apa Kata Mereka</h2>
+        <div class="testi-grid">
+          <div class="testi" data-aos="fade-right">
+            <p>
+              “Tugas ekonomi saya selesai cepat dan hasilnya rapi banget. Worth
+              it!”
             </p>
+            <cite>— Andre, Mahasiswa Ekonomi</cite>
           </div>
-          <div
-            class="bg-gradient-to-br from-indigo-100 to-white rounded-2xl shadow-lg p-6"
-            data-aos="fade-up"
-          >
-            <h3 class="text-xl font-semibold text-indigo-600 mb-2">
-              Cepat & Tepat Waktu
-            </h3>
-            <p class="text-gray-700">
-              Pengerjaan cepat dengan kualitas tetap terjaga, sesuai deadline
-              kamu.
+          <div class="testi" data-aos="fade-left">
+            <p>
+              “Bener-bener membantu skripsi saya. Konsultasi ramah dan hasil
+              sesuai ekspektasi.”
             </p>
-          </div>
-          <div
-            class="bg-gradient-to-br from-indigo-100 to-white rounded-2xl shadow-lg p-6"
-            data-aos="fade-left"
-          >
-            <h3 class="text-xl font-semibold text-indigo-600 mb-2">
-              Harga Terjangkau & Transparan
-            </h3>
-            <p class="text-gray-700">
-              Layanan berkualitas tanpa membuat kantong bolong.
-            </p>
+            <cite>— Rina, Mahasiswa TI</cite>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- STATISTIK -->
-    <section class="py-20 bg-gradient-to-br from-white to-indigo-50">
-      <div class="max-w-6xl mx-auto text-center px-4">
-        <h2 class="text-3xl font-bold text-indigo-700 mb-12" data-aos="fade-up">
-          Capaian Kami
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div data-aos="zoom-in">
-            <p class="text-5xl font-bold text-indigo-600">1.200+</p>
-            <p class="text-gray-600 mt-2">Tugas Diselesaikan</p>
-          </div>
-          <div data-aos="zoom-in" data-aos-delay="100">
-            <p class="text-5xl font-bold text-indigo-600">98%</p>
-            <p class="text-gray-600 mt-2">Kepuasan Klien</p>
-          </div>
-          <div data-aos="zoom-in" data-aos-delay="200">
-            <p class="text-5xl font-bold text-indigo-600">5+</p>
-            <p class="text-gray-600 mt-2">Tahun Pengalaman</p>
-          </div>
-          <div data-aos="zoom-in" data-aos-delay="300">
-            <p class="text-5xl font-bold text-indigo-600">24/7</p>
-            <p class="text-gray-600 mt-2">Respons Admin</p>
-          </div>
-        </div>
+    <!-- ================= CTA ================= -->
+    <section class="cta" data-aos="zoom-in">
+      <div class="container">
+        <h2>Siap Naik Kelas?</h2>
+        <p>Konsultasi gratis sekarang dan mulai pesan layanan akademik.</p>
+        <a href="form.html" class="btn-primary">Pesan Sekarang</a>
       </div>
     </section>
 
-    <!-- Layanan Section -->
-    <section id="layanan" class="bg-indigo-50 py-20 px-6">
-      <h3 class="text-3xl font-bold text-center text-indigo-700 mb-12">
-        Layanan Kami
-      </h3>
-      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-        <!-- Perkuliahan -->
-        <div
-          class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition transform hover:scale-105"
-        >
-          <h4 class="text-xl font-semibold mb-3 text-indigo-600">
-            Tugas Perkuliahan
-          </h4>
-          <p class="text-gray-700 mb-4">
-            Kami menerima semua jenis tugas kuliah baik dari jurusan teknik,
-            sosial, kesehatan, ekonomi, dan lainnya.
-          </p>
-          <ul class="list-disc list-inside text-gray-700 mb-4">
-            <li>✅ Makalah dan laporan</li>
-            <li>✅ PowerPoint presentasi</li>
-            <li>✅ Tugas coding (Python, Java, Web)</li>
-            <li>✅ Statistik, SPSS, Excel</li>
-            <li>✅ Tugas sistem informasi dan basis data</li>
-            <li>✅ Revisi sesuai dosen</li>
-            <li>✅ Untuk semua jurusan</li>
-          </ul>
-        </div>
-
-        <!-- Sekolah -->
-        <div
-          class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition transform hover:scale-105"
-        >
-          <h4 class="text-xl font-semibold mb-3 text-indigo-600">
-            Tugas Sekolah
-          </h4>
-          <p class="text-gray-700 mb-4">
-            Kami bantu tugas anak sekolah dari SD sampai SMA dengan hasil
-            terbaik dan ramah revisi.
-          </p>
-          <ul class="list-disc list-inside text-gray-700 mb-4">
-            <li>📘 Tugas Matematika, IPA, IPS</li>
-            <li>📘 Membuat resume, esai, laporan</li>
-            <li>📘 PowerPoint presentasi siswa</li>
-            <li>📘 Tugas prakarya & desain</li>
-            <li>📘 Membuat soal dan kunci jawaban</li>
-            <li>📘 Latihan Ujian dan Penilaian</li>
-          </ul>
-        </div>
-
-        <!-- Custom -->
-        <div
-          class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition transform hover:scale-105"
-        >
-          <h4 class="text-xl font-semibold mb-3 text-indigo-600">
-            Pengetikan & Custom
-          </h4>
-          <p class="text-gray-700 mb-4">
-            Untuk kamu yang butuh cepat dan rapi, kami menyediakan layanan
-            pengetikan & kustomisasi.
-          </p>
-          <ul class="list-disc list-inside text-gray-700 mb-4">
-            <li>⌨️ Pengetikan dokumen Word</li>
-            <li>📄 Membuat Curriculum Vitae (CV)</li>
-            <li>📊 Entry data Excel dan tabel</li>
-            <li>📎 Resume artikel/jurnal</li>
-            <li>🎨 Desain presentasi PowerPoint</li>
-            <li>📁 Kompilasi dokumen tugas akhir</li>
-          </ul>
-        </div>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Naik Kelas Akademik</p>
+        <p>
+          <a href="index.html">Beranda</a> |
+          <a href="tentang.html">Tentang</a> |
+          <a href="layanan.html">Layanan</a> | <a href="seo.html">Artikel</a> |
+          <a href="form.html">Kontak</a>
+        </p>
       </div>
-    </section>
-
-    <section class="py-16 bg-indigo-50">
-      <div class="max-w-6xl mx-auto px-4 space-y-10">
-        <!-- SLIDE ATAS - BERGERAK KE KIRI -->
-        <div class="slide-container">
-          <div class="slide-track">
-            <div class="slide-item">✅ Layanan Tepat Waktu</div>
-            <div class="slide-item">📊 Presentasi PowerPoint</div>
-            <div class="slide-item">📝 Resume Otomatis</div>
-            <div class="slide-item">🎓 Tugas Sekolah</div>
-            <div class="slide-item">🎥 Edit Video</div>
-            <div class="slide-item">📖 Translate Jurnal</div>
-            <div class="slide-item">📚 Pembuatan Modul</div>
-            <div class="slide-item">🗂️ Pengerjaan Excel Otomatis</div>
-            <!-- Duplikasi agar loop terasa mulus -->
-            <div class="slide-item">✅ Layanan Tepat Waktu</div>
-            <div class="slide-item">📊 Presentasi PowerPoint</div>
-            <div class="slide-item">📝 Resume Otomatis</div>
-            <div class="slide-item">🎓 Tugas Sekolah</div>
-            <div class="slide-item">🎥 Edit Video</div>
-            <div class="slide-item">📖 Translate Jurnal</div>
-            <div class="slide-item">📚 Pembuatan Modul</div>
-            <div class="slide-item">🗂️ Pengerjaan Excel Otomatis</div>
-          </div>
-        </div>
-
-        <!-- SLIDE BAWAH - BERGERAK KE KANAN -->
-        <div class="slide-container reverse">
-          <div class="slide-track">
-            <div class="slide-item">🌐 Desain Web Frontend</div>
-            <div class="slide-item">🧾 CV & Surat Lamaran</div>
-            <div class="slide-item">📱 Desain Canva</div>
-            <div class="slide-item">📂 Entry Data Excel</div>
-            <div class="slide-item">💼 Portofolio Digital</div>
-            <div class="slide-item">🧠 Latihan Coding</div>
-            <div class="slide-item">📌 Infografis dan Konten</div>
-            <div class="slide-item">🎨 Desain Brosur & Poster</div>
-            <!-- Duplikasi agar loop terasa mulus -->
-            <div class="slide-item">🌐 Desain Web Frontend</div>
-            <div class="slide-item">🧾 CV & Surat Lamaran</div>
-            <div class="slide-item">📱 Desain Canva</div>
-            <div class="slide-item">📂 Entry Data Excel</div>
-            <div class="slide-item">💼 Portofolio Digital</div>
-            <div class="slide-item">🧠 Latihan Coding</div>
-            <div class="slide-item">📌 Infografis dan Konten</div>
-            <div class="slide-item">🎨 Desain Brosur & Poster</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER CTA -->
-    <section class="py-20 bg-indigo-600 text-white text-center">
-      <div class="max-w-xl mx-auto" data-aos="fade-up">
-        <h3 class="text-2xl font-semibold mb-4">
-          Kami tak sekadar bantu tugas — tapi bantu kamu
-          <span class="italic font-bold">Naik Kelas</span>.
-        </h3>
-        <a
-          href="layanan.html"
-          class="mt-6 inline-block px-8 py-3 rounded-full bg-white text-indigo-700 font-semibold shadow-lg hover:scale-105 transition"
-        >
-          Siap Naik Kelas? 🚀
-        </a>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-indigo-800 text-white text-center py-6">
-      <p>© 2025 Naik Kelas Akademik. Semua Hak Dilindungi.</p>
     </footer>
 
-    <!-- WhatsApp Floating -->
+    <!-- WA Floating Button -->
     <a
-      href="https://wa.me/628161999005"
+      href="https://wa.me/628161999005?text=Halo%20saya%20mau%20konsultasi"
+      class="wa-fab"
       target="_blank"
-      class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center space-x-2 z-50 animate-bounce"
+      aria-label="Chat via WhatsApp"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path
-          d="M21 15a2 2 0 01-2 2h-3l-4 4v-4H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2z"
-        />
-      </svg>
-      <span class="font-semibold">Konsultasi Gratis</span>
+      <i class="bx bxl-whatsapp"></i>
     </a>
-    <!-- SCRIPT -->
+
+    <!-- Script utama -->
+    <script src="js/script.js"></script>
+    <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init();
+      AOS.init({
+        duration: 1000, // durasi animasi
+        once: true, // animasi hanya jalan sekali
+      });
     </script>
-    <script src="js/script.js"></script>
   </body>
 </html>

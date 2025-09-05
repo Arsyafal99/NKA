@@ -1,151 +1,180 @@
-if (window.location.pathname.includes("thankyou.html")) {
-  document.addEventListener("DOMContentLoaded", () => {
-    const canvas = document.createElement("canvas");
-    canvas.id = "confettiCanvas";
-    canvas.style.position = "fixed";
-    canvas.style.top = "0";
-    canvas.style.left = "0";
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.style.pointerEvents = "none";
-    canvas.style.zIndex = "999";
-    document.body.appendChild(canvas);
+/* ===========================================================
+   script.js — Global JS untuk semua halaman
+   Fitur:
+   1. Navbar Hamburger + Overlay
+   2. Nav Active State
+   3. Smooth Scroll
+   4. Statistik Count-up
+   5. Auto Slider (opsional)
+   6. Form Protection + Redirect WA
+   =========================================================== */
 
-    const confetti = window.confetti.create(canvas, {
-      resize: true,
-      useWorker: true,
-    });
+(function () {
+  /* ========== UTILITIES ========== */
+  const qs = (sel, el = document) => el.querySelector(sel);
+  const qsa = (sel, el = document) => Array.from(el.querySelectorAll(sel));
 
-    const duration = 4 * 1000;
-    const animationEnd = Date.now() + duration;
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 999 };
+  const lockScroll = () => (document.body.style.overflow = "hidden");
+  const unlockScroll = () => (document.body.style.overflow = "");
 
-    function randomInRange(min, max) {
-      return Math.random() * (max - min) + min;
-    }
+  /* ========== 1. NAVBAR HAMBURGER + OVERLAY ========== */
+  const hamburger = qs("#hamburger");
+  const navMenu = qs("#nav-menu");
 
-    const interval = setInterval(function () {
-      const timeLeft = animationEnd - Date.now();
-
-      if (timeLeft <= 0) {
-        clearInterval(interval);
-        return;
-      }
-
-      confetti(
-        Object.assign({}, defaults, {
-          particleCount: 5,
-          origin: {
-            x: randomInRange(0.1, 0.3),
-            y: Math.random() - 0.2,
-          },
-        })
-      );
-      confetti(
-        Object.assign({}, defaults, {
-          particleCount: 5,
-          origin: {
-            x: randomInRange(0.7, 0.9),
-            y: Math.random() - 0.2,
-          },
-        })
-      );
-    }, 250);
-  });
-}
-
-// === Navbar Mobile Toggle ===
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.getElementById("menu-toggle");
-  const navMenu = document.getElementById("nav-menu");
-
-  if (toggleButton && navMenu) {
-    toggleButton.addEventListener("click", () => {
-      navMenu.classList.toggle("hidden");
-    });
+  let overlay = qs(".mobile-overlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "mobile-overlay";
+    overlay.style.cssText =
+      "position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .25s ease;z-index:998;";
+    document.body.appendChild(overlay);
   }
-});
 
-// Jalankan confetti setelah halaman dimuat
-window.onload = () => {
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6 },
-  });
-};
-
-const toggle = document.getElementById("dark-toggle");
-const html = document.documentElement;
-toggle?.addEventListener("click", () => {
-  html.classList.toggle("dark");
-});
-
-// Animated counter
-const counters = document.querySelectorAll(".stat-count");
-counters.forEach((counter) => {
-  const updateCount = () => {
-    const target = +counter.getAttribute("data-target");
-    const current = +counter.innerText.replace(/\D/g, "");
-    const increment = target / 60;
-
-    if (current < target) {
-      counter.innerText =
-        Math.ceil(current + increment) +
-        (counter.innerText.includes("%") ? "%" : "");
-      setTimeout(updateCount, 30);
-    } else {
-      counter.innerText = target + (counter.innerText.includes("%") ? "%" : "");
-    }
+  const openMenu = () => {
+    hamburger?.classList.add("active");
+    navMenu?.classList.add("show");
+    overlay.style.opacity = "1";
+    overlay.style.pointerEvents = "auto";
+    lockScroll();
   };
-  updateCount();
-});
+  const closeMenu = () => {
+    hamburger?.classList.remove("active");
+    navMenu?.classList.remove("show");
+    overlay.style.opacity = "0";
+    overlay.style.pointerEvents = "none";
+    unlockScroll();
+  };
 
-// === Confetti otomatis di halaman thankyou.html ===
-if (window.location.pathname.includes("thankyou.html")) {
-  document.addEventListener("DOMContentLoaded", () => {
-    const canvas = document.createElement("canvas");
-    canvas.id = "confettiCanvas";
-    canvas.style.position = "fixed";
-    canvas.style.top = "0";
-    canvas.style.left = "0";
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.style.pointerEvents = "none";
-    canvas.style.zIndex = "999";
-    document.body.appendChild(canvas);
+  hamburger?.addEventListener("click", () => {
+    hamburger.classList.contains("active") ? closeMenu() : openMenu();
+  });
+  overlay.addEventListener("click", closeMenu);
+  qsa(".nav-menu a").forEach((a) =>
+    a.addEventListener("click", () => closeMenu())
+  );
 
-    const confetti = window.confetti.create(canvas, {
-      resize: true,
-      useWorker: true,
+  /* ========== 2. NAV ACTIVE STATE ========== */
+  (function setActiveNav() {
+    const path = window.location.pathname.split("/").pop() || "index.html";
+    qsa(".nav-menu a, .navbar .nav-link").forEach((link) => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+      const clean = href.split("?")[0].split("#")[0];
+      if (clean === path) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
     });
+  })();
 
-    const duration = 4000;
-    const animationEnd = Date.now() + duration;
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 999 };
+  /* ========== 3. SMOOTH SCROLL ========== */
+  qsa('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      const id = anchor.getAttribute("href");
+      if (!id || id === "#") return;
+      const target = qs(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
 
-    function randomInRange(min, max) {
-      return Math.random() * (max - min) + min;
-    }
+  /* ========== 4. STAT COUNT-UP ========== */
+  const statEls = qsa(".stat-number");
+  if (statEls.length) {
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+    const animateCount = (el, to, duration = 1500) => {
+      const from = 0;
+      const start = performance.now();
+      const step = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = easeOut(p);
+        const val = Math.floor(from + (to - from) * eased);
+        el.textContent = Number.isFinite(val)
+          ? val.toLocaleString("id-ID")
+          : to;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
 
-    const interval = setInterval(() => {
-      const timeLeft = animationEnd - Date.now();
-      if (timeLeft <= 0) {
-        clearInterval(interval);
+    const parseTarget = (el) => {
+      const raw =
+        el.getAttribute("data-target") || el.textContent.replace(/[^\d]/g, "");
+      return parseInt(raw, 10) || 0;
+    };
+
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            animateCount(el, parseTarget(el));
+            obs.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    statEls.forEach((el) => io.observe(el));
+  }
+
+  /* ========== 5. AUTO SLIDER (opsional) ========== */
+  qsa(".slide-track").forEach((track) => {
+    const items = qsa(".slide-item", track);
+    if (items.length < 2) return;
+
+    track.append(...items.map((n) => n.cloneNode(true)));
+
+    const SPEED = 60;
+    let start = null;
+
+    const animate = (ts) => {
+      if (!start) start = ts;
+      const dt = (ts - start) / 1000;
+      const move = (dt * SPEED) % track.scrollWidth;
+      track.style.transform = `translateX(${-move}px)`;
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+  });
+
+  /* ========== 6. FORM PROTECTION & WA REDIRECT ========== */
+  qsa("form").forEach((form) => {
+    let submitting = false;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (submitting) return;
+      submitting = true;
+
+      const nama = qs("#nama")?.value;
+      const email = qs("#email")?.value;
+      const layanan = qs("#layanan")?.value;
+      const deadline = qs("#deadline")?.value;
+      const deskripsi = qs("#deskripsi")?.value;
+
+      if (!nama || !email || !layanan || !deadline || !deskripsi) {
+        alert("Harap isi semua field!");
+        submitting = false;
         return;
       }
-      confetti(
-        Object.assign({}, defaults, {
-          particleCount: 5,
-          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-        })
-      );
-      confetti(
-        Object.assign({}, defaults, {
-          particleCount: 5,
-          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-        })
-      );
-    }, 250);
+
+      const pesan = `Halo, saya ${nama}%0AEmail: ${email}%0ALayanan: ${layanan}%0ADeadline: ${deadline}%0ADeskripsi: ${deskripsi}`;
+      const waUrl = `https://wa.me/6281234567890?text=${pesan}`;
+
+      window.open(waUrl, "_blank");
+
+      setTimeout(() => (submitting = false), 3000);
+    });
   });
-}
+
+  /* ========== 7. CLOSE MENU ON RESIZE DESKTOP ========== */
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 900) {
+      closeMenu();
+    }
+  });
+})();

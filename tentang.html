@@ -3,208 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tentang Kami - Naik Kelas Akademik</title>
-    <!-- Tailwind CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
+    <title>Tentang Kami | Naik Kelas Akademik</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="LOGO/Tab.png" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Naik Kelas Akademik membantu mahasiswa dan pelajar menyelesaikan tugas, skripsi, dan laporan dengan profesional, terpercaya, dan tepat waktu."
     />
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
+
+    <meta property="og:title" content="Naik Kelas Akademik" />
+    <meta
+      property="og:description"
+      content="Solusi akademik profesional untuk mahasiswa & pelajar."
     />
-    <!-- AOS Animasi Scroll -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!-- Custom CSS -->
+    <meta property="og:image" content="img/hero.jpg" />
+    <meta property="og:url" content="https://arsyafal99.github.io/NKA" />
+    <meta property="og:type" content="website" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body class="bg-gray-50 text-gray-800">
-    <!-- Navbar -->
-    <header class="fixed top-0 w-full z-50 bg-white shadow">
-      <div
-        class="container mx-auto flex items-center justify-between py-4 px-6"
-      >
-        <!-- Logo dan Judul Brand -->
-        <a href="index.html" class="flex items-center space-x-3">
-          <img
-            src="img/favicon.png"
-            alt="Logo Naik Kelas"
-            class="h-10 w-10 object-contain"
-          />
-          <span class="text-2xl font-bold text-blue-700"
-            >Naik Kelas Akademik</span
-          >
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="index.html" class="brand">
+          <img src="LOGO/Logos.png" alt="Logo" class="brand-logo" />
+          <span class="brand-text">Naik Kelas Akademik</span>
         </a>
-
-        <!-- Hamburger Menu Mobile -->
-        <button
-          class="md:hidden focus:outline-none"
-          id="menu-toggle"
-          aria-label="Toggle Navigation"
-        >
-          <svg
-            class="w-6 h-6 text-gray-700"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
         </button>
-
-        <!-- Navigasi -->
-        <nav
-          id="nav-menu"
-          class="hidden md:flex flex-col md:flex-row md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none px-6 py-4 md:py-0 transition-all duration-300"
-        >
-          <a
-            href="index.html"
-            class="block py-2 md:py-0 md:px-4 text-gray-700 hover:text-blue-500"
-            >Beranda</a
-          >
-          <a
-            href="tentang.html"
-            class="block py-2 md:py-0 md:px-4 text-gray-700 hover:text-blue-500"
-            >Tentang</a
-          >
-          <a
-            href="layanan.html"
-            class="block py-2 md:py-0 md:px-4 text-gray-700 hover:text-blue-500"
-            >Layanan</a
-          >
-        </nav>
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html" class="nav-link">Beranda</a>
+          <a href="tentang.html" class="nav-link active">Tentang</a>
+          <a href="layanan.html" class="nav-link">Layanan</a>
+          <a href="seo.html" class="nav-link">Artikel</a>
+          <a href="form.html" class="nav-cta">Pesan Sekarang</a>
+        </div>
       </div>
-    </header>
+    </nav>
 
-    <!-- HERO Tentang Kami -->
-    <section
-      class="text-center py-24 px-4 bg-gradient-to-b from-indigo-100 to-white mt-16"
-    >
-      <h2
-        class="text-4xl md:text-5xl font-bold mb-4 text-indigo-600 animate-fade-up"
-      >
-        Naik Kelas Akademik
-      </h2>
-      <p class="text-lg md:text-xl max-w-3xl mx-auto animate-fade-up delay-100">
-        Kami adalah tim profesional yang berdedikasi membantu mahasiswa dan
-        pelajar menyelesaikan tugas secara cepat, rapi, dan berkualitas. Kami
-        bukan sekadar joki tugas, tapi partner belajar yang siap bantu kamu naik
-        kelas!
-      </p>
-    </section>
-
-    <!-- Konten Utama: Visi Misi & Kenapa Kami -->
-    <section class="py-16 px-4 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-      <!-- Visi Misi -->
-      <div>
-        <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Visi & Misi</h3>
-        <p class="mb-2">
-          🎯 <strong>Visi:</strong> Menjadi platform edukatif yang membantu
-          pelajar dan mahasiswa naik kelas dengan layanan akademik berkualitas.
+    <!-- ================= HERO ABOUT ================= -->
+    <section class="hero about-hero">
+      <div class="container" data-aos="fade-up">
+        <h1 class="hero-title">
+          Tentang <span class="highlight">Naik Kelas Akademik</span>
+        </h1>
+        <p class="hero-lead">
+          Kami hadir sebagai solusi akademik modern untuk membantu mahasiswa dan
+          pelajar mencapai prestasi terbaik dengan cara yang profesional, cepat,
+          dan terpercaya.
         </p>
-        <p class="mb-2">🚀 <strong>Misi:</strong></p>
-        <ul class="list-disc list-inside text-gray-700">
-          <li>Menyediakan layanan yang cepat, tepat, dan ramah revisi.</li>
-          <li>Mengutamakan kualitas, orisinalitas, dan kepercayaan.</li>
-          <li>Menjadi solusi tugas yang edukatif, bukan sekadar instan.</li>
-        </ul>
-      </div>
-
-      <!-- Alasan Memilih Kami -->
-      <div>
-        <h3 class="text-2xl font-semibold text-indigo-600 mb-4">
-          Kenapa Memilih Kami?
-        </h3>
-        <ul class="space-y-3 text-gray-700">
-          <li>✅ Tim berpengalaman dari berbagai bidang</li>
-          <li>✅ Ramah revisi & fleksibel</li>
-          <li>✅ Tepat waktu dan rapi</li>
-          <li>✅ Aman & privasi terjaga</li>
-          <li>✅ Support 24 jam</li>
-        </ul>
       </div>
     </section>
 
-    <!-- VIDEO DEMO -->
-    <div class="mb-12" data-aos="zoom-in">
-      <video controls class="mx-auto rounded-xl shadow-lg max-w-full w-[640px]">
-        <source
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
-          type="video/mp4"
-        />
-        Browser Anda tidak mendukung pemutaran video.
-      </video>
-      <p class="text-center text-gray-500 mt-2 italic">
-        *Video demo akan diperbarui dengan hasil asli setelah tersedia.
-      </p>
-    </div>
+    <!-- ================= VISI & MISI ================= -->
+    <section class="visi-misi">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Visi & Misi</h2>
+        <div class="cards">
+          <div class="card" data-aos="fade-right">
+            <i class="bx bx-bullseye"></i>
+            <h3>Visi</h3>
+            <p>
+              Menjadi platform akademik terpercaya yang membantu mahasiswa dan
+              pelajar naik kelas dalam prestasi, keterampilan, dan masa depan.
+            </p>
+          </div>
+          <div class="card" data-aos="fade-left">
+            <i class="bx bx-target-lock"></i>
+            <h3>Misi</h3>
+            <p>
+              Memberikan layanan akademik profesional, konsultasi ramah, dan
+              hasil berkualitas tinggi sesuai kebutuhan klien.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- IMAGE SHOWCASE -->
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
-      data-aos="fade-up"
-      data-aos-delay="200"
-    >
-      <img
-        src="img/favicon.png"
-        alt="Contoh hasil tugas 1"
-        class="rounded-lg shadow hover:scale-105 transition"
-      />
-      <img
-        src="img/favicon.png"
-        alt="Contoh hasil tugas 2"
-        class="rounded-lg shadow hover:scale-105 transition"
-      />
-      <img
-        src="img/favicon.png"
-        alt="Contoh hasil tugas 3"
-        class="rounded-lg shadow hover:scale-105 transition"
-      />
-    </div>
+    <!-- ================= TIMELINE ================= -->
+    <section class="timeline">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Perjalanan Kami</h2>
+        <div class="timeline-items">
+          <div class="timeline-item" data-aos="fade-right">
+            <span class="timeline-year">2023</span>
+            <p>
+              Naik Kelas Akademik didirikan sebagai komunitas kecil bantuan
+              akademik.
+            </p>
+          </div>
+          <div class="timeline-item" data-aos="fade-left">
+            <span class="timeline-year">2024</span>
+            <p>
+              Melayani ratusan mahasiswa dari berbagai universitas di Indonesia.
+            </p>
+          </div>
+          <div class="timeline-item" data-aos="fade-right">
+            <span class="timeline-year">2025</span>
+            <p>
+              Menjadi platform digital dengan ribuan klien dan layanan yang
+              semakin lengkap.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="bg-white py-6 shadow-inner">
-      <div class="container mx-auto px-4 text-center text-sm text-gray-600">
-        © 2025 Naik Kelas Akademik. Naik Kualitas, Naik Kelas.
+    <!-- ================= KEUNGGULAN ================= -->
+    <section class="team">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Keunggulan Kami</h2>
+        <div class="cards">
+          <div class="card" data-aos="zoom-in">
+            <i class="bx bx-user-voice"></i>
+            <h3>Konsultasi Ramah</h3>
+            <p>
+              Tim kami siap memberikan bimbingan akademik dengan sabar dan
+              jelas.
+            </p>
+          </div>
+          <div class="card" data-aos="zoom-in" data-aos-delay="200">
+            <i class="bx bx-analyse"></i>
+            <h3>Analisis Mendalam</h3>
+            <p>
+              Setiap tugas atau laporan dikerjakan dengan pemahaman mendalam.
+            </p>
+          </div>
+          <div class="card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="bx bx-crown"></i>
+            <h3>Prestasi Terjamin</h3>
+            <p>
+              Kami memastikan hasil yang berkualitas untuk menunjang prestasi
+              akademik.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta" data-aos="zoom-in">
+      <div class="container">
+        <h2>Siap Naik Kelas Bersama Kami?</h2>
+        <p>Konsultasi gratis sekarang dan mulai pesan layanan akademik.</p>
+        <a href="form.html" class="btn-primary">Pesan Sekarang</a>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Naik Kelas Akademik</p>
+        <p>
+          <a href="index.html">Beranda</a> |
+          <a href="tentang.html">Tentang</a> |
+          <a href="layanan.html">Layanan</a> | <a href="seo.html">Artikel</a> |
+          <a href="form.html">Kontak</a>
+        </p>
       </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
+    <!-- WA Floating Button -->
     <a
-      href="https://wa.me/628161999005"
+      href="https://wa.me/628161999005?text=Halo%20saya%20mau%20konsultasi"
+      class="wa-fab"
       target="_blank"
-      class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center space-x-2 z-50 animate-pulse"
+      aria-label="Chat via WhatsApp"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path
-          d="M21 15a2 2 0 01-2 2h-3l-4 4v-4H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2z"
-        />
-      </svg>
-      <span class="font-semibold">Konsultasi Gratis</span>
+      <i class="bx bxl-whatsapp"></i>
     </a>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
 
     <!-- Script -->
     <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
   </body>
 </html>
