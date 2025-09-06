@@ -479,3 +479,61 @@ section:nth-of-type(odd) {
     font-size: 0.8rem;
   }
 }
+
+.footer-social {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Background sesuai brand */
+.footer-social a:nth-child(1) {
+  background: radial-gradient(
+    circle at 30% 30%,
+    #f58529,
+    #dd2a7b,
+    #8134af,
+    #515bd4
+  ); /* Instagram gradient */
+}
+.footer-social a:nth-child(2) {
+  background: #000000; /* TikTok hitam */
+}
+.footer-social a:nth-child(3) {
+  background: #1877f2; /* Facebook biru */
+}
+
+/* Hover efek */
+.footer-social a:hover {
+  transform: scale(1.15) rotate(8deg);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-social a {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .footer-social a {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
