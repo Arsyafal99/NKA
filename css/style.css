@@ -307,6 +307,77 @@ textarea:focus {
   justify-content: flex-end;
 }
 
+/* Testimoni Slider */
+/* ===== 8.5. TESTIMONI GRID (Index) ===== */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.testi-grid .testi {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.testi-grid .testi:hover {
+  transform: translateY(-5px);
+}
+
+.testi-grid .testi p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.testi-grid .testi cite {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.testi-slider {
+  position: relative;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.testi-slider .testi {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.testi-slider .testi.active {
+  display: block;
+  opacity: 1;
+}
+
+.testi p {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testi cite {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 0.95rem;
+}
 /* ===== 9. FOOTER ===== */
 .footer {
   background: var(--dark);
@@ -376,4 +447,35 @@ section:nth-of-type(even) {
 
 section:nth-of-type(odd) {
   background-color: #ffffff; /* tetap putih */
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .testi-slider {
+    padding: 0.8rem;
+    min-height: 140px;
+  }
+
+  .testi p {
+    font-size: 1rem;
+  }
+
+  .testi cite {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testi-slider {
+    padding: 0.6rem;
+    min-height: 120px;
+  }
+
+  .testi p {
+    font-size: 0.9rem;
+  }
+
+  .testi cite {
+    font-size: 0.8rem;
+  }
 }

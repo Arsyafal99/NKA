@@ -178,3 +178,17 @@
     }
   });
 })();
+
+// === Testimoni Slider ===
+const testimonials = document.querySelectorAll(".testi-slider .testi");
+let testiIndex = 0;
+
+function showNextTesti() {
+  testimonials[testiIndex].classList.remove("active");
+  testiIndex = (testiIndex + 1) % testimonials.length;
+  testimonials[testiIndex].classList.add("active");
+}
+
+if (testimonials.length > 0) {
+  setInterval(showNextTesti, 3500); // ganti setiap 3.5 detik
+}
